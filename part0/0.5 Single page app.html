@@ -1,0 +1,32 @@
+title 0.5: Single page app
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa
+
+note over browser:
+browser sent a GET to another URL
+end note
+
+server-->browser: HTML-code
+
+note left of server:
+server gives an bit different HTML-document
+end note
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+server-->browser: main.css
+browser->server: HTTP https://studies.cs.helsinki.fi/exampleapp/spa.js
+server-->browser: spa.js
+
+note left of server:
+The web, is a SPA. So the JavaScript code is a bit different too
+This code will sent the new notes to the server and render on the fly
+the new changes over the web without refresh the whole page.
+end note
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+server-->browser: [99 Object { content: "oooo", date: "2021-05-27T19:16:44.386Z" }]
+
+note over browser:
+This have almost identical result but the way to 
+handle and render the data is different
+end note
